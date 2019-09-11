@@ -17,7 +17,7 @@ IE的事件流是事件冒泡流，Netscape的事件流是事件捕获流。
 在DOM上触发某个事件，会产生一个事件对象event，这个对象包含所有与对象有关的信息。
 <center>事件属性和方法 </center>
 |属性方法|类型|说明|
-|:---|:---:|:---|
+|:----|:----:|:----|
 |bubbles|Boolean|用来表示该事件是否在DOM中冒泡|
 |cancelBubble|Boolean|表示这个事件是否可以取消|
 |currentTarget|Element|当前注册事件的对象引用，这个值会在事件中传递的过程中改变|
@@ -36,8 +36,9 @@ IE的事件流是事件冒泡流，Netscape的事件流是事件捕获流。
 ###### IE中的事件对象
 与访问DOM中的event对象不同，要访问IE中的event对象，有几种不同的方式，取决于指定事件处理程序的方法。
 <center>IE event对象属性与方法</center>
+
 |属性/方法|类型|读/写|说明|
-|:---:|:---:|:---:|:---|
+|:----:|:----:|:----:|:----|
 |cancelBubble|Boolean|读/写|默认值为false，但将其设置为true就可以取消事件冒泡（与DOM中的stopProPagation()方法的作用相同）|
 |returnValue|Boolean|读/写|默认值为true，但将其设置为false就可以取消事件的默认行为（与DOM中的preventDefault()方法的作用相同|
 |srcElement|Element|只读|事件的目标（与DOM中的target属性相同）|
