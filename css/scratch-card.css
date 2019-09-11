@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 600px;
+    height: 649px;
+    /* 对图片进行绝对定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+canvas {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
