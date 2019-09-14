@@ -343,8 +343,49 @@ var isSupported = document.implementation.hasFeature('MouseEvent', '3.0');
 ##### 多媒体(Media)事件
 |事件|描述|
 |:---:|:---|
+|onabort|事件在视频/音频(audio/video)终止加载时触发|
+|oncanplay|事件在用户可以开始播放视频/音频(audio/video)时触发|
+|oncanplaythrough|事件在视频/音频(audio/video)可以正常播放且无需停顿和缓冲时触发|
+|ondurationchange|事件在视频/音频(audio/video)的时长发生变化时触发|
+|onemptied|当期播放列表为空时触发|
+|onended|事件在视频/音频(audio/video)播放结束时触发|
+|onerror|事件在视频/音频(audio/video)数据加载期间发生错误时触发|
+|onloadeddata|事件在浏览器加载视频/音频(audio/video)当前帧时触发|
+|onloadedmetadata|事件在指定视频/音频(audio/video)的元数据加载后触发|
+|onloadstart|事件在浏览器开始寻找指定视频/音频(audio/video)触发|
+|onpause|事件在视频/音频(audio/video)暂停时触发|
+|onplay|事件在视频/音频(audio/video)开始播放时触发|
+|onplaying|事件在视频/音频(audio/video)暂停或者缓冲后准备重新开始播放时触发|
+|onprogress|事件在浏览器下载指定的视频/音频(audio/video)时触发|
+|onratechange|事件在视频/音频(audio/video)的播放速度发生改变时触发|
+|onseeked|事件在用户重新定位视频/音频(audio/video)的播放位置后触发|
+|onseeking|事件在用户开始重新定位视频/音频(audio/video)时触发|
+|onsuspend|事件在浏览器读取媒体数据中止时触发|
+|onstalled|事件在浏览器获取媒体数据，但媒体数据不可用时触发|
+|ontimeupdate|事件在当前的播放位置发生改变时触发|
+|onvolumechange|事件在音量发生变化时触发|
+|onwaiting|事件在视频由于要播放下一帧 而需要缓冲时触发|
 
+##### 动画事件
+|事件|描述|
+|:---:|:---|
+|animationend|在CSS动画结束播放时触发|
+|animationiteration|在CSS动画重复播放时触发|
+|animationstart|在CSS动画开始播放时触发|
 
+##### 过渡事件
+|事件|描述|
+|:---:|:---|
+|transitionend|在CSS完成过渡后触发|
 
-
-
+##### 其他事件
+|事件|描述|
+|:---:|:---|
+|onmessage|该事件通过或者从对象(`WebSocket`、`WebWorker`、`EventSource`、子`frame`或父窗口)接收到消息时触发|
+|onwheel|鼠标滚轮在元素上下滚动时触发|
+|ononline|在浏览器开始在线工作时触发|
+|onoffline|在浏览器开始离线工作时触发|
+|onpopstate|在窗口的浏览历史(history对象)发生改变时触发|
+|onshow|当`<menu>`元素在上下文菜单显示时触发|
+|onstorage|在`WebStorage`(HTML5Web存储)更新时触发|
+|ontoggle|在用户打开或关闭`<details>`元素时触发|
