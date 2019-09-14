@@ -2,7 +2,7 @@
 #### 事件基础
 JS是以事件驱动来实现页面交互，与HTML之间的交互是通过事件实现的，事件是将JS与网页联系在一起的主要方式。
 
-事件驱动的核心是以消息为基础，以事件为驱动。事件是文档或浏览器窗口中发生的一些特定的交互行为。可以使用侦听器来预定事件，以便事件发生时执行相应的代码。当事件发生时，浏览器会自动生成事件对象（event），并沿着DOM节点有序进行传播，直到被脚本捕获。这种观察模式确保了JS与HTML保持松耦合的关系。
+事件驱动的核心是以消息为基础，以事件为驱动。事件是文档或浏览器窗口中发生的一些特定的交互行为。可以使用侦听器来预定事件，以便事件发生时执行相应的代码。当事件发生时，浏览器会自动生成事件对象（`event`），并沿着DOM节点有序进行传播，直到被脚本捕获。这种观察模式确保了JS与HTML保持松耦合的关系。
 
 在使用事件时，需要考虑如下一些内存与性能方面的问题：
 1. 有必要限制一个页面中事件处理程序的数量，数量太多或占用大量的内存，而且会让用户感觉页面反映不够灵敏；
@@ -19,8 +19,7 @@ IE的事件流是事件冒泡流，Netscape的事件流是事件捕获流。
 #### 事件对象
 在DOM上触发某个事件，会产生一个事件对象event，这个对象包含所有与对象有关的信息。
 
-<center>事件属性和方法 </center>
-
+事件属性和方法
 |属性方法|类型|说明|
 |:----|:----:|:----|
 |bubbles|Boolean|用来表示该事件是否在DOM中冒泡|
@@ -34,10 +33,10 @@ IE的事件流是事件冒泡流，Netscape的事件流是事件捕获流。
 |target|Element|对事件起源目标的引用|
 |type|String|Event事件的类型（不区分大小写）|
 |deepPath|Array|一个由事件流经过了的DOMNODE组成的Array|
-|returnValue|Boolean|旧版本IE相当于Event.preventDefault()和Event.defaultPreventd|
-|srcElement|Element|旧版本的IE相当于Event.target|
+|returnValue|Boolean|旧版本IE相当于`Event.preventDefault()`和`Event.defaultPreventd`|
+|srcElement|Element|旧版本的IE相当于`Event.target`|
 
-在事件处理程序内部，对象this始终等于currentTarget的值，而target则只包含事实的实际目标。
+在事件处理程序内部，对象this始终等于`currentTarget`的值，而`target`则只包含事实的实际目标。
 ##### IE中的事件对象
 与访问DOM中的event对象不同，要访问IE中的event对象，有几种不同的方式，取决于指定事件处理程序的方法。
 
@@ -45,9 +44,9 @@ IE的事件流是事件冒泡流，Netscape的事件流是事件捕获流。
 
 |属性/方法|类型|读/写|说明|
 |:----:|:----:|:----:|:----|
-|cancelBubble|Boolean|读/写|默认值为false，但将其设置为true就可以取消事件冒泡（与DOM中的stopProPagation()方法的作用相同）|
-|returnValue|Boolean|读/写|默认值为true，但将其设置为false就可以取消事件的默认行为（与DOM中的preventDefault()方法的作用相同|
-|srcElement|Element|只读|事件的目标（与DOM中的target属性相同）|
+|cancelBubble|Boolean|读/写|默认值为false，但将其设置为true就可以取消事件冒泡（与DOM中的`stopProPagation()`方法的作用相同）|
+|returnValue|Boolean|读/写|默认值为true，但将其设置为false就可以取消事件的默认行为（与DOM中的`preventDefault()`方法的作用相同|
+|srcElement|Element|只读|事件的目标（与DOM中的`target`属性相同）|
 |type|String|只读|被触发事件的类型|
 
 ##### 跨浏览器的事件对象
@@ -103,9 +102,9 @@ var EventUtil = {
 }
 ```
 #### 共享onload事件
-在HTML文档未完成加载前，DOM是不完整的，此时执行脚本操作DOM无法正常工作。应该确认在网页加载完毕之后立即执行脚本，网页加载完毕之后会触发一个onload事件，这个事件与window相关。 
+在HTML文档未完成加载前，DOM是不完整的，此时执行脚本操作DOM无法正常工作。应该确认在网页加载完毕之后立即执行脚本，网页加载完毕之后会触发一个`onload`事件，这个事件与`window`相关。 
 
-在页面加载完成后由多个函数执行，使代码将函数function1和function2逐一绑定到onload事件上，则会导致最后的那个函数才会被实际执行，代码如下：
+在页面加载完成后由多个函数执行，使代码将函数`function1`和`function2`逐一绑定到`onload`事件上，则会导致最后的那个函数才会被实际执行，代码如下：
 
 ```javascript
 window.onload = function1;
